@@ -1,0 +1,2307 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO CF_ADC_DSM20_core
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  FOREIGN CF_ADC_DSM20_core 0 0 ;
+  SIZE 922.275 BY 586.38 ;
+  PIN VREF
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.825 534.975 -9.055 535.105 ;
+    END
+  END VREF
+  PIN EN_ADWA
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 882.485 590.465 882.685 591.385 ;
+    END
+  END EN_ADWA
+  PIN EN_DWA
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 881.965 590.465 882.165 591.385 ;
+    END
+  END EN_DWA
+  PIN MODINPUT
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 318.89 922.28 319.09 ;
+    END
+  END MODINPUT
+  PIN sleep
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -9.995 24.345 -9.005 24.485 ;
+    END
+  END sleep
+  PIN COMBUF_INN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.925 564.05 -8.965 564.2 ;
+    END
+  END COMBUF_INN
+  PIN COMBUF_INP
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.95 564.81 -8.95 564.96 ;
+    END
+  END COMBUF_INP
+  PIN PBUF_INN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.91 568.545 -9.16 568.67 ;
+    END
+  END PBUF_INN
+  PIN PBUF_INP
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.95 567.77 -8.915 567.92 ;
+    END
+  END PBUF_INP
+  PIN buf_sel
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10 552.285 -9.38 552.425 ;
+    END
+  END buf_sel
+  PIN enable_hv
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 919.875 471.565 922.275 471.705 ;
+    END
+  END enable_hv
+  PIN VREFQ
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.86 535.85 -8.88 535.99 ;
+    END
+  END VREFQ
+  PIN disable_mod
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 329.54 922.28 329.74 ;
+    END
+  END disable_mod
+  PIN iso
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.62 464.9 922.275 465.04 ;
+    END
+  END iso
+  PIN phi2_buffer
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.18 320.2 922.275 320.34 ;
+    END
+  END phi2_buffer
+  PIN bypass_p
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.18 332.49 922.275 332.63 ;
+    END
+  END bypass_p
+  PIN bypass_n
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.19 332.12 922.275 332.26 ;
+    END
+  END bypass_n
+  PIN vpwr_cp_dc
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 682.88 588.05 684.435 591.395 ;
+    END
+  END vpwr_cp_dc
+  PIN VGND_DAC
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -9.88 533.505 -6.945 534.175 ;
+    END
+  END VGND_DAC
+  PIN vgnde_vnb
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.26 472.325 922.285 472.72 ;
+    END
+  END vgnde_vnb
+  PIN SUMN_TEST
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.12 315.455 922.275 315.655 ;
+    END
+  END SUMN_TEST
+  PIN vpb
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT 918.5 109.945 922.285 112.76 ;
+    END
+  END vpb
+  PIN vnb
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met2 ;
+        RECT 918.755 114.075 922.275 119.995 ;
+    END
+  END vnb
+  PIN vpwr_cp
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 918.82 309.73 922.275 314.125 ;
+    END
+  END vpwr_cp
+  PIN vgnde
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.84 473 922.28 473.69 ;
+    END
+  END vgnde
+  PIN vgndd
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.32 553.885 922.275 559.5 ;
+    END
+  END vgndd
+  PIN vpwrd
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.37 567.395 922.195 573.115 ;
+    END
+  END vpwrd
+  PIN vgnd
+    DIRECTION INPUT ;
+    USE GROUND ;
+    PORT
+      LAYER met2 ;
+        RECT -9.99 10.42 -6.915 16.34 ;
+    END
+  END vgnd
+  PIN vpwr
+    DIRECTION INPUT ;
+    USE POWER ;
+    PORT
+      LAYER met2 ;
+        RECT -9.935 17.43 -6.86 23.4 ;
+    END
+  END vpwr
+  PIN vpwr_ext
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 673.74 586.455 676.475 591.375 ;
+    END
+  END vpwr_ext
+  PIN refout
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.18 308.2 922.275 308.4 ;
+    END
+  END refout
+  PIN SUMP_TEST
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.12 315.95 922.275 316.15 ;
+    END
+  END SUMP_TEST
+  PIN test_dig_out
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 316.485 922.28 316.685 ;
+    END
+  END test_dig_out
+  PIN buf_chopclk
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 316.98 922.28 317.18 ;
+    END
+  END buf_chopclk
+  PIN SCANOUTPUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 317.465 922.28 317.665 ;
+    END
+  END SCANOUTPUT
+  PIN overload_det_zero
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 317.925 922.28 318.125 ;
+    END
+  END overload_det_zero
+  PIN overload_det_one
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 318.42 922.28 318.62 ;
+    END
+  END overload_det_one
+  PIN SIGN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 319.355 922.28 319.555 ;
+    END
+  END SIGN
+  PIN MODBIT
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 319.785 922.28 319.925 ;
+    END
+  END MODBIT
+  PIN INN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -10 332.835 -8.97 333.035 ;
+    END
+  END INN
+  PIN NONOV[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.635 365.87 922.275 366.13 ;
+    END
+  END NONOV[0]
+  PIN INP
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -10 333.795 -8.97 333.995 ;
+    END
+  END INP
+  PIN NONOV[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.635 366.45 922.275 366.71 ;
+    END
+  END NONOV[1]
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.7 395.95 922.275 396.21 ;
+    END
+  END clk
+  PIN CHOP_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.7 411.54 922.275 411.86 ;
+    END
+  END CHOP_EN
+  PIN qlev[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 331.26 922.28 331.46 ;
+    END
+  END qlev[1]
+  PIN qlev[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 331.69 922.28 331.89 ;
+    END
+  END qlev[0]
+  PIN dig_test_sel[0]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 330.83 922.28 331.03 ;
+    END
+  END dig_test_sel[0]
+  PIN dig_test_sel[1]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 330.4 922.28 330.6 ;
+    END
+  END dig_test_sel[1]
+  PIN RESET3
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 329.11 922.28 329.31 ;
+    END
+  END RESET3
+  PIN RESET2
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 328.68 922.28 328.88 ;
+    END
+  END RESET2
+  PIN RESET1
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 328.25 922.28 328.45 ;
+    END
+  END RESET1
+  PIN ODET_TH[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 327.82 922.28 328.02 ;
+    END
+  END ODET_TH[0]
+  PIN ODET_TH[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 327.39 922.28 327.59 ;
+    END
+  END ODET_TH[1]
+  PIN ODET_TH[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 326.96 922.28 327.16 ;
+    END
+  END ODET_TH[2]
+  PIN ODET_TH[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 326.53 922.28 326.73 ;
+    END
+  END ODET_TH[3]
+  PIN ODET_TH[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 326.1 922.28 326.3 ;
+    END
+  END ODET_TH[4]
+  PIN ODET
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 325.67 922.28 325.87 ;
+    END
+  END ODET
+  PIN FCHOP[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 325.24 922.28 325.44 ;
+    END
+  END FCHOP[0]
+  PIN FCHOP[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 324.81 922.28 325.01 ;
+    END
+  END FCHOP[1]
+  PIN FCHOP[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 324.38 922.28 324.58 ;
+    END
+  END FCHOP[2]
+  PIN RESET_DEC_INPUT
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 323.95 922.28 324.15 ;
+    END
+  END RESET_DEC_INPUT
+  PIN BUF_FCHOP[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 323.52 922.28 323.72 ;
+    END
+  END BUF_FCHOP[0]
+  PIN BUF_FCHOP[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 323.09 922.28 323.29 ;
+    END
+  END BUF_FCHOP[1]
+  PIN BUF_FCHOP[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 322.66 922.28 322.86 ;
+    END
+  END BUF_FCHOP[2]
+  PIN BUF_CHOP_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 322.23 922.28 322.43 ;
+    END
+  END BUF_CHOP_EN
+  PIN itrim_comp[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 321.8 922.28 322 ;
+    END
+  END itrim_comp[0]
+  PIN itrim_comp[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 321.37 922.28 321.57 ;
+    END
+  END itrim_comp[1]
+  PIN itrim_comp[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 320.94 922.28 321.14 ;
+    END
+  END itrim_comp[2]
+  PIN itrim_comp[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 320.57 922.28 320.71 ;
+    END
+  END itrim_comp[3]
+  PIN FCAP1EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 726.455 589.295 726.655 591.355 ;
+    END
+  END FCAP1EN
+  PIN FCAP1OFFSET
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 726.025 589.295 726.225 591.355 ;
+    END
+  END FCAP1OFFSET
+  PIN FCAP2EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 725.595 589.295 725.795 591.355 ;
+    END
+  END FCAP2EN
+  PIN FCAP3EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 725.165 589.295 725.365 591.355 ;
+    END
+  END FCAP3EN
+  PIN IPCAP1EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 724.735 589.295 724.935 591.355 ;
+    END
+  END IPCAP1EN
+  PIN RESCAP[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 724.305 589.295 724.505 591.355 ;
+    END
+  END RESCAP[1]
+  PIN IPCAP2EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 723.875 589.295 724.075 591.355 ;
+    END
+  END IPCAP2EN
+  PIN IPCAP3EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 723.445 589.295 723.645 591.355 ;
+    END
+  END IPCAP3EN
+  PIN RESCAP[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 723.015 589.295 723.215 591.355 ;
+    END
+  END RESCAP[0]
+  PIN IPCAP1OFFSET
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 722.585 589.295 722.785 591.355 ;
+    END
+  END IPCAP1OFFSET
+  PIN RESCAP[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 722.155 589.295 722.355 591.355 ;
+    END
+  END RESCAP[2]
+  PIN RESCAPEN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 721.725 589.295 721.925 591.355 ;
+    END
+  END RESCAPEN
+  PIN FCAP1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 721.295 589.295 721.495 591.355 ;
+    END
+  END FCAP1[0]
+  PIN FCAP1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 720.865 589.295 721.065 591.355 ;
+    END
+  END FCAP1[1]
+  PIN FCAP1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 720.435 589.295 720.635 591.355 ;
+    END
+  END FCAP1[2]
+  PIN IPCAP1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 720.005 589.295 720.205 591.355 ;
+    END
+  END IPCAP1[0]
+  PIN FCAP1[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 719.575 589.295 719.775 591.355 ;
+    END
+  END FCAP1[6]
+  PIN FCAP1[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 719.145 589.295 719.345 591.355 ;
+    END
+  END FCAP1[5]
+  PIN FCAP1[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 718.715 589.295 718.915 591.355 ;
+    END
+  END FCAP1[4]
+  PIN FCAP1[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 718.285 589.295 718.485 591.355 ;
+    END
+  END FCAP1[3]
+  PIN IPCAP1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 717.855 589.295 718.055 591.355 ;
+    END
+  END IPCAP1[1]
+  PIN IPCAP1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 717.425 589.295 717.625 591.355 ;
+    END
+  END IPCAP1[2]
+  PIN IPCAP1[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 716.995 589.295 717.195 591.355 ;
+    END
+  END IPCAP1[3]
+  PIN IPCAP1[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 716.565 589.295 716.765 591.355 ;
+    END
+  END IPCAP1[4]
+  PIN IPCAP1[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 716.135 589.295 716.335 591.355 ;
+    END
+  END IPCAP1[5]
+  PIN IPCAP1[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 715.705 589.295 715.905 591.355 ;
+    END
+  END IPCAP1[6]
+  PIN DACCAP[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 715.275 589.295 715.475 591.355 ;
+    END
+  END DACCAP[2]
+  PIN DACCAP[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 714.845 589.295 715.045 591.355 ;
+    END
+  END DACCAP[1]
+  PIN DACCAP[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 714.415 589.295 714.615 591.355 ;
+    END
+  END DACCAP[0]
+  PIN DACCAP[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 713.985 589.295 714.185 591.355 ;
+    END
+  END DACCAP[3]
+  PIN DACCAP[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 713.555 589.295 713.755 591.355 ;
+    END
+  END DACCAP[4]
+  PIN DACCAP[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 713.125 589.295 713.325 591.355 ;
+    END
+  END DACCAP[5]
+  PIN DACCAPEN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 712.695 589.295 712.895 591.355 ;
+    END
+  END DACCAPEN
+  PIN FCAP2[0]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 712.265 589.295 712.465 591.355 ;
+    END
+  END FCAP2[0]
+  PIN FCAP2[1]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 711.835 589.295 712.035 591.355 ;
+    END
+  END FCAP2[1]
+  PIN FCAP2[2]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 711.405 589.295 711.605 591.355 ;
+    END
+  END FCAP2[2]
+  PIN FCAP3[1]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 710.975 589.295 711.175 591.355 ;
+    END
+  END FCAP3[1]
+  PIN FCAP3[0]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 710.545 589.295 710.745 591.355 ;
+    END
+  END FCAP3[0]
+  PIN FCAP2[3]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 710.115 589.295 710.315 591.355 ;
+    END
+  END FCAP2[3]
+  PIN FCAP3[2]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 709.685 589.295 709.885 591.355 ;
+    END
+  END FCAP3[2]
+  PIN IPCAP2[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 708.825 589.295 709.025 591.355 ;
+    END
+  END IPCAP2[0]
+  PIN IPCAP2[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 708.395 589.295 708.595 591.355 ;
+    END
+  END IPCAP2[1]
+  PIN IPCAP2[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 707.965 589.295 708.165 591.355 ;
+    END
+  END IPCAP2[2]
+  PIN IPCAP3[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 707.535 589.295 707.735 591.355 ;
+    END
+  END IPCAP3[0]
+  PIN SUMCAP1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 707.105 589.295 707.305 591.355 ;
+    END
+  END SUMCAP1[2]
+  PIN IPCAP3[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 706.675 589.295 706.875 591.355 ;
+    END
+  END IPCAP3[2]
+  PIN SUMCAP1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 706.245 589.295 706.445 591.355 ;
+    END
+  END SUMCAP1[0]
+  PIN SUMCAP1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 705.815 589.295 706.015 591.355 ;
+    END
+  END SUMCAP1[1]
+  PIN IPCAP3[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 705.385 589.295 705.585 591.355 ;
+    END
+  END IPCAP3[1]
+  PIN SUMCAP1_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 704.955 589.295 705.155 591.355 ;
+    END
+  END SUMCAP1_EN
+  PIN SUMCAP2[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 704.525 589.295 704.725 591.355 ;
+    END
+  END SUMCAP2[0]
+  PIN SUMCAP2[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 704.095 589.295 704.295 591.355 ;
+    END
+  END SUMCAP2[1]
+  PIN SUMCAP2[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 703.665 589.295 703.865 591.355 ;
+    END
+  END SUMCAP2[2]
+  PIN SUMCAP2_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 703.235 589.295 703.435 591.355 ;
+    END
+  END SUMCAP2_EN
+  PIN refsel[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 702.805 589.295 703.005 591.355 ;
+    END
+  END refsel[0]
+  PIN SUMCAP3_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 702.375 589.295 702.575 591.355 ;
+    END
+  END SUMCAP3_EN
+  PIN SUMCAP3[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 701.945 589.295 702.145 591.355 ;
+    END
+  END SUMCAP3[2]
+  PIN SUMCAP3[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 701.515 589.295 701.715 591.355 ;
+    END
+  END SUMCAP3[1]
+  PIN SUMCAP3[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 701.085 589.295 701.285 591.355 ;
+    END
+  END SUMCAP3[0]
+  PIN refsel[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 700.655 589.295 700.855 591.355 ;
+    END
+  END refsel[1]
+  PIN refsel[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 700.225 589.295 700.425 591.355 ;
+    END
+  END refsel[2]
+  PIN refsel[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 699.795 589.295 699.995 591.355 ;
+    END
+  END refsel[3]
+  PIN refsel[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 699.365 589.295 699.565 591.355 ;
+    END
+  END refsel[4]
+  PIN refsel[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 698.935 589.295 699.135 591.355 ;
+    END
+  END refsel[5]
+  PIN refsel[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 698.505 589.295 698.705 591.355 ;
+    END
+  END refsel[6]
+  PIN refsel[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 698.075 589.295 698.275 591.355 ;
+    END
+  END refsel[7]
+  PIN refsel[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 697.645 589.295 697.845 591.355 ;
+    END
+  END refsel[8]
+  PIN refsel[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 697.215 589.295 697.415 591.355 ;
+    END
+  END refsel[9]
+  PIN refsel[10]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 696.785 589.295 696.985 591.355 ;
+    END
+  END refsel[10]
+  PIN refsel[11]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 696.355 589.295 696.555 591.355 ;
+    END
+  END refsel[11]
+  PIN refsel[12]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 695.925 589.295 696.125 591.355 ;
+    END
+  END refsel[12]
+  PIN refsel[13]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 695.495 589.295 695.695 591.355 ;
+    END
+  END refsel[13]
+  PIN refsel[14]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 695.065 589.295 695.265 591.355 ;
+    END
+  END refsel[14]
+  PIN refsel[15]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 694.635 589.295 694.835 591.355 ;
+    END
+  END refsel[15]
+  PIN SUMCAPFB[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 694.205 589.295 694.405 591.355 ;
+    END
+  END SUMCAPFB[0]
+  PIN SUMCAPFB[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 693.775 589.295 693.975 591.355 ;
+    END
+  END SUMCAPFB[3]
+  PIN SUMCAPFB[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 693.345 589.295 693.545 591.355 ;
+    END
+  END SUMCAPFB[2]
+  PIN SUMCAPFB[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 692.915 589.295 693.115 591.355 ;
+    END
+  END SUMCAPFB[1]
+  PIN SUMCAPFB_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 692.485 589.295 692.685 591.355 ;
+    END
+  END SUMCAPFB_EN
+  PIN SUMCAPIN[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 692.055 589.295 692.255 591.355 ;
+    END
+  END SUMCAPIN[0]
+  PIN SUMCAPIN[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 691.625 589.295 691.825 591.355 ;
+    END
+  END SUMCAPIN[1]
+  PIN SUMCAPIN[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 691.195 589.295 691.395 591.355 ;
+    END
+  END SUMCAPIN[2]
+  PIN SUMCAPIN[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 690.765 589.295 690.965 591.355 ;
+    END
+  END SUMCAPIN[3]
+  PIN SUMCAPIN[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 690.335 589.295 690.535 591.355 ;
+    END
+  END SUMCAPIN[4]
+  PIN bw[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 689.475 589.295 689.675 591.355 ;
+    END
+  END bw[2]
+  PIN bw[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 689.045 589.295 689.245 591.355 ;
+    END
+  END bw[1]
+  PIN SUMCAPIN_EN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 689.905 589.295 690.105 591.355 ;
+    END
+  END SUMCAPIN_EN
+  PIN bw[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 688.615 589.295 688.815 591.355 ;
+    END
+  END bw[0]
+  PIN bw[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 688.185 589.295 688.385 591.355 ;
+    END
+  END bw[3]
+  PIN itrim_2_3[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 146.765 -7.87 146.965 ;
+    END
+  END itrim_2_3[0]
+  PIN itrim_sum[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 147.245 -7.87 147.445 ;
+    END
+  END itrim_sum[5]
+  PIN itrim_sum[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 147.725 -7.87 147.925 ;
+    END
+  END itrim_sum[4]
+  PIN itrim_1[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 142.44 -7.87 142.64 ;
+    END
+  END itrim_1[0]
+  PIN iin
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 142.92 -7.87 143.12 ;
+    END
+  END iin
+  PIN iinc
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 143.4 -7.87 143.6 ;
+    END
+  END iinc
+  PIN itrim_2_3[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 144.365 -7.87 144.565 ;
+    END
+  END itrim_2_3[5]
+  PIN itrim_2_3[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 144.845 -7.87 145.045 ;
+    END
+  END itrim_2_3[4]
+  PIN itrim_2_3[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 145.325 -7.87 145.525 ;
+    END
+  END itrim_2_3[3]
+  PIN itrim_2_3[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 145.805 -7.87 146.005 ;
+    END
+  END itrim_2_3[2]
+  PIN itrim_2_3[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 146.285 -7.87 146.485 ;
+    END
+  END itrim_2_3[1]
+  PIN itrim_sum[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 149.645 -7.87 149.845 ;
+    END
+  END itrim_sum[0]
+  PIN itrim_sum[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 148.205 -7.87 148.405 ;
+    END
+  END itrim_sum[3]
+  PIN itrim_sum[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 148.685 -7.87 148.885 ;
+    END
+  END itrim_sum[2]
+  PIN itrim_sum[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 149.165 -7.87 149.365 ;
+    END
+  END itrim_sum[1]
+  PIN itrim_1[4]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 98.78 -8.545 98.98 ;
+    END
+  END itrim_1[4]
+  PIN itrim_1[9]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.01 115.84 -8.475 116.04 ;
+    END
+  END itrim_1[9]
+  PIN dout[7]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 548.62 922.275 548.82 ;
+    END
+  END dout[7]
+  PIN dout[6]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 542.5 922.275 542.7 ;
+    END
+  END dout[6]
+  PIN dout[5]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 538.51 922.275 538.71 ;
+    END
+  END dout[5]
+  PIN dout[4]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 534.26 922.275 534.46 ;
+    END
+  END dout[4]
+  PIN dout[3]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 529.81 922.275 530.01 ;
+    END
+  END dout[3]
+  PIN dout[2]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 525.425 922.275 525.625 ;
+    END
+  END dout[2]
+  PIN dout[1]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 521.19 922.275 521.39 ;
+    END
+  END dout[1]
+  PIN dout[0]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 921.53 516.89 922.275 517.09 ;
+    END
+  END dout[0]
+  PIN SCANINPUT
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 881.005 590.465 881.205 591.385 ;
+    END
+  END SCANINPUT
+  PIN SCANMODE
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 880.045 590.465 880.245 591.385 ;
+    END
+  END SCANMODE
+  PIN SCANCLK
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 880.525 590.465 880.725 591.385 ;
+    END
+  END SCANCLK
+  PIN SCANEN
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 881.485 590.465 881.685 591.385 ;
+    END
+  END SCANEN
+  PIN reset_b
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 879.565 590.465 879.765 591.385 ;
+    END
+  END reset_b
+  PIN EN_DEM
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 805.57 590.44 805.77 591.36 ;
+    END
+  END EN_DEM
+  PIN test[7]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 805.09 590.44 805.29 591.36 ;
+    END
+  END test[7]
+  PIN test[6]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 804.61 590.44 804.81 591.36 ;
+    END
+  END test[6]
+  PIN test[5]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 804.13 590.44 804.33 591.36 ;
+    END
+  END test[5]
+  PIN test[4]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 803.65 590.44 803.85 591.36 ;
+    END
+  END test[4]
+  PIN test[3]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 803.17 590.44 803.37 591.36 ;
+    END
+  END test[3]
+  PIN test[2]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 802.69 590.44 802.89 591.36 ;
+    END
+  END test[2]
+  PIN test[1]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 802.21 590.44 802.41 591.36 ;
+    END
+  END test[1]
+  PIN test[0]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 801.73 590.44 801.93 591.36 ;
+    END
+  END test[0]
+  PIN TESTMODE
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 801.25 590.44 801.45 591.36 ;
+    END
+  END TESTMODE
+  PIN itrim_1[5]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 72.455 -8.595 72.655 ;
+    END
+  END itrim_1[5]
+  PIN dig_test_sel[2]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT 920.185 329.97 922.28 330.17 ;
+    END
+  END dig_test_sel[2]
+  PIN itrim_1[1]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 97.245 -8.655 97.445 ;
+    END
+  END itrim_1[1]
+  PIN itrim_1[2]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 97.77 -8.635 97.97 ;
+    END
+  END itrim_1[2]
+  PIN itrim_1[3]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 98.28 -8.53 98.48 ;
+    END
+  END itrim_1[3]
+  PIN FCAP3[3]
+    DIRECTION INOUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT 709.255 589.295 709.455 591.355 ;
+    END
+  END FCAP3[3]
+  PIN itrim_1[8]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 70.905 -8.59 71.105 ;
+    END
+  END itrim_1[8]
+  PIN itrim_1[7]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 71.435 -8.58 71.635 ;
+    END
+  END itrim_1[7]
+  PIN itrim_1[6]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+        RECT -10.005 71.935 -8.655 72.135 ;
+    END
+  END itrim_1[6]
+  PIN VCM
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met1 ;
+        RECT -10 339.11 -8.16 339.31 ;
+    END
+  END VCM
+  OBS
+    LAYER li1 ;
+      RECT 0 0 922.275 586.38 ;
+    LAYER met1 ;
+      RECT 0 0 922.275 586.38 ;
+    LAYER met2 ;
+      RECT 0 0 918.5 586.38 ;
+      RECT 918.5 0 918.755 109.945 ;
+      RECT 918.5 112.76 918.755 586.38 ;
+      RECT 918.755 0 918.82 109.945 ;
+      RECT 918.755 112.76 918.82 114.075 ;
+      RECT 918.755 119.995 918.82 586.38 ;
+      RECT 918.82 0 919.875 109.945 ;
+      RECT 918.82 112.76 919.875 114.075 ;
+      RECT 918.82 119.995 919.875 309.73 ;
+      RECT 918.82 314.125 919.875 586.38 ;
+      RECT 919.875 0 920.12 109.945 ;
+      RECT 919.875 112.76 920.12 114.075 ;
+      RECT 919.875 119.995 920.12 309.73 ;
+      RECT 919.875 314.125 920.12 471.565 ;
+      RECT 919.875 471.705 920.12 586.38 ;
+      RECT 920.12 0 920.18 109.945 ;
+      RECT 920.12 112.76 920.18 114.075 ;
+      RECT 920.12 119.995 920.18 309.73 ;
+      RECT 920.12 314.125 920.18 315.455 ;
+      RECT 920.12 315.655 920.18 315.95 ;
+      RECT 920.12 316.15 920.18 471.565 ;
+      RECT 920.12 471.705 920.18 586.38 ;
+      RECT 920.18 0 920.185 109.945 ;
+      RECT 920.18 112.76 920.185 114.075 ;
+      RECT 920.18 119.995 920.185 308.2 ;
+      RECT 920.18 308.4 920.185 309.73 ;
+      RECT 920.18 314.125 920.185 315.455 ;
+      RECT 920.18 315.655 920.185 315.95 ;
+      RECT 920.18 316.15 920.185 320.2 ;
+      RECT 920.18 320.34 920.185 332.49 ;
+      RECT 920.18 332.63 920.185 471.565 ;
+      RECT 920.18 471.705 920.185 586.38 ;
+      RECT 920.185 0 920.19 109.945 ;
+      RECT 920.185 112.76 920.19 114.075 ;
+      RECT 920.185 119.995 920.19 308.2 ;
+      RECT 920.185 308.4 920.19 309.73 ;
+      RECT 920.185 314.125 920.19 315.455 ;
+      RECT 920.185 315.655 920.19 315.95 ;
+      RECT 920.185 316.15 920.19 316.485 ;
+      RECT 920.185 316.685 920.19 316.98 ;
+      RECT 920.185 317.18 920.19 317.465 ;
+      RECT 920.185 317.665 920.19 317.925 ;
+      RECT 920.185 318.125 920.19 318.42 ;
+      RECT 920.185 318.62 920.19 318.89 ;
+      RECT 920.185 319.09 920.19 319.355 ;
+      RECT 920.185 319.555 920.19 319.785 ;
+      RECT 920.185 319.925 920.19 320.2 ;
+      RECT 920.185 320.34 920.19 320.57 ;
+      RECT 920.185 320.71 920.19 320.94 ;
+      RECT 920.185 321.14 920.19 321.37 ;
+      RECT 920.185 321.57 920.19 321.8 ;
+      RECT 920.185 322 920.19 322.23 ;
+      RECT 920.185 322.43 920.19 322.66 ;
+      RECT 920.185 322.86 920.19 323.09 ;
+      RECT 920.185 323.29 920.19 323.52 ;
+      RECT 920.185 323.72 920.19 323.95 ;
+      RECT 920.185 324.15 920.19 324.38 ;
+      RECT 920.185 324.58 920.19 324.81 ;
+      RECT 920.185 325.01 920.19 325.24 ;
+      RECT 920.185 325.44 920.19 325.67 ;
+      RECT 920.185 325.87 920.19 326.1 ;
+      RECT 920.185 326.3 920.19 326.53 ;
+      RECT 920.185 326.73 920.19 326.96 ;
+      RECT 920.185 327.16 920.19 327.39 ;
+      RECT 920.185 327.59 920.19 327.82 ;
+      RECT 920.185 328.02 920.19 328.25 ;
+      RECT 920.185 328.45 920.19 328.68 ;
+      RECT 920.185 328.88 920.19 329.11 ;
+      RECT 920.185 329.31 920.19 329.54 ;
+      RECT 920.185 329.74 920.19 329.97 ;
+      RECT 920.185 330.17 920.19 330.4 ;
+      RECT 920.185 330.6 920.19 330.83 ;
+      RECT 920.185 331.03 920.19 331.26 ;
+      RECT 920.185 331.46 920.19 331.69 ;
+      RECT 920.185 331.89 920.19 332.49 ;
+      RECT 920.185 332.63 920.19 471.565 ;
+      RECT 920.185 471.705 920.19 586.38 ;
+      RECT 920.19 0 920.32 109.945 ;
+      RECT 920.19 112.76 920.32 114.075 ;
+      RECT 920.19 119.995 920.32 308.2 ;
+      RECT 920.19 308.4 920.32 309.73 ;
+      RECT 920.19 314.125 920.32 315.455 ;
+      RECT 920.19 315.655 920.32 315.95 ;
+      RECT 920.19 316.15 920.32 316.485 ;
+      RECT 920.19 316.685 920.32 316.98 ;
+      RECT 920.19 317.18 920.32 317.465 ;
+      RECT 920.19 317.665 920.32 317.925 ;
+      RECT 920.19 318.125 920.32 318.42 ;
+      RECT 920.19 318.62 920.32 318.89 ;
+      RECT 920.19 319.09 920.32 319.355 ;
+      RECT 920.19 319.555 920.32 319.785 ;
+      RECT 920.19 319.925 920.32 320.2 ;
+      RECT 920.19 320.34 920.32 320.57 ;
+      RECT 920.19 320.71 920.32 320.94 ;
+      RECT 920.19 321.14 920.32 321.37 ;
+      RECT 920.19 321.57 920.32 321.8 ;
+      RECT 920.19 322 920.32 322.23 ;
+      RECT 920.19 322.43 920.32 322.66 ;
+      RECT 920.19 322.86 920.32 323.09 ;
+      RECT 920.19 323.29 920.32 323.52 ;
+      RECT 920.19 323.72 920.32 323.95 ;
+      RECT 920.19 324.15 920.32 324.38 ;
+      RECT 920.19 324.58 920.32 324.81 ;
+      RECT 920.19 325.01 920.32 325.24 ;
+      RECT 920.19 325.44 920.32 325.67 ;
+      RECT 920.19 325.87 920.32 326.1 ;
+      RECT 920.19 326.3 920.32 326.53 ;
+      RECT 920.19 326.73 920.32 326.96 ;
+      RECT 920.19 327.16 920.32 327.39 ;
+      RECT 920.19 327.59 920.32 327.82 ;
+      RECT 920.19 328.02 920.32 328.25 ;
+      RECT 920.19 328.45 920.32 328.68 ;
+      RECT 920.19 328.88 920.32 329.11 ;
+      RECT 920.19 329.31 920.32 329.54 ;
+      RECT 920.19 329.74 920.32 329.97 ;
+      RECT 920.19 330.17 920.32 330.4 ;
+      RECT 920.19 330.6 920.32 330.83 ;
+      RECT 920.19 331.03 920.32 331.26 ;
+      RECT 920.19 331.46 920.32 331.69 ;
+      RECT 920.19 331.89 920.32 332.12 ;
+      RECT 920.19 332.26 920.32 332.49 ;
+      RECT 920.19 332.63 920.32 471.565 ;
+      RECT 920.19 471.705 920.32 586.38 ;
+      RECT 920.32 0 920.37 109.945 ;
+      RECT 920.32 112.76 920.37 114.075 ;
+      RECT 920.32 119.995 920.37 308.2 ;
+      RECT 920.32 308.4 920.37 309.73 ;
+      RECT 920.32 314.125 920.37 315.455 ;
+      RECT 920.32 315.655 920.37 315.95 ;
+      RECT 920.32 316.15 920.37 316.485 ;
+      RECT 920.32 316.685 920.37 316.98 ;
+      RECT 920.32 317.18 920.37 317.465 ;
+      RECT 920.32 317.665 920.37 317.925 ;
+      RECT 920.32 318.125 920.37 318.42 ;
+      RECT 920.32 318.62 920.37 318.89 ;
+      RECT 920.32 319.09 920.37 319.355 ;
+      RECT 920.32 319.555 920.37 319.785 ;
+      RECT 920.32 319.925 920.37 320.2 ;
+      RECT 920.32 320.34 920.37 320.57 ;
+      RECT 920.32 320.71 920.37 320.94 ;
+      RECT 920.32 321.14 920.37 321.37 ;
+      RECT 920.32 321.57 920.37 321.8 ;
+      RECT 920.32 322 920.37 322.23 ;
+      RECT 920.32 322.43 920.37 322.66 ;
+      RECT 920.32 322.86 920.37 323.09 ;
+      RECT 920.32 323.29 920.37 323.52 ;
+      RECT 920.32 323.72 920.37 323.95 ;
+      RECT 920.32 324.15 920.37 324.38 ;
+      RECT 920.32 324.58 920.37 324.81 ;
+      RECT 920.32 325.01 920.37 325.24 ;
+      RECT 920.32 325.44 920.37 325.67 ;
+      RECT 920.32 325.87 920.37 326.1 ;
+      RECT 920.32 326.3 920.37 326.53 ;
+      RECT 920.32 326.73 920.37 326.96 ;
+      RECT 920.32 327.16 920.37 327.39 ;
+      RECT 920.32 327.59 920.37 327.82 ;
+      RECT 920.32 328.02 920.37 328.25 ;
+      RECT 920.32 328.45 920.37 328.68 ;
+      RECT 920.32 328.88 920.37 329.11 ;
+      RECT 920.32 329.31 920.37 329.54 ;
+      RECT 920.32 329.74 920.37 329.97 ;
+      RECT 920.32 330.17 920.37 330.4 ;
+      RECT 920.32 330.6 920.37 330.83 ;
+      RECT 920.32 331.03 920.37 331.26 ;
+      RECT 920.32 331.46 920.37 331.69 ;
+      RECT 920.32 331.89 920.37 332.12 ;
+      RECT 920.32 332.26 920.37 332.49 ;
+      RECT 920.32 332.63 920.37 471.565 ;
+      RECT 920.32 471.705 920.37 553.885 ;
+      RECT 920.32 559.5 920.37 586.38 ;
+      RECT 920.37 0 920.635 109.945 ;
+      RECT 920.37 112.76 920.635 114.075 ;
+      RECT 920.37 119.995 920.635 308.2 ;
+      RECT 920.37 308.4 920.635 309.73 ;
+      RECT 920.37 314.125 920.635 315.455 ;
+      RECT 920.37 315.655 920.635 315.95 ;
+      RECT 920.37 316.15 920.635 316.485 ;
+      RECT 920.37 316.685 920.635 316.98 ;
+      RECT 920.37 317.18 920.635 317.465 ;
+      RECT 920.37 317.665 920.635 317.925 ;
+      RECT 920.37 318.125 920.635 318.42 ;
+      RECT 920.37 318.62 920.635 318.89 ;
+      RECT 920.37 319.09 920.635 319.355 ;
+      RECT 920.37 319.555 920.635 319.785 ;
+      RECT 920.37 319.925 920.635 320.2 ;
+      RECT 920.37 320.34 920.635 320.57 ;
+      RECT 920.37 320.71 920.635 320.94 ;
+      RECT 920.37 321.14 920.635 321.37 ;
+      RECT 920.37 321.57 920.635 321.8 ;
+      RECT 920.37 322 920.635 322.23 ;
+      RECT 920.37 322.43 920.635 322.66 ;
+      RECT 920.37 322.86 920.635 323.09 ;
+      RECT 920.37 323.29 920.635 323.52 ;
+      RECT 920.37 323.72 920.635 323.95 ;
+      RECT 920.37 324.15 920.635 324.38 ;
+      RECT 920.37 324.58 920.635 324.81 ;
+      RECT 920.37 325.01 920.635 325.24 ;
+      RECT 920.37 325.44 920.635 325.67 ;
+      RECT 920.37 325.87 920.635 326.1 ;
+      RECT 920.37 326.3 920.635 326.53 ;
+      RECT 920.37 326.73 920.635 326.96 ;
+      RECT 920.37 327.16 920.635 327.39 ;
+      RECT 920.37 327.59 920.635 327.82 ;
+      RECT 920.37 328.02 920.635 328.25 ;
+      RECT 920.37 328.45 920.635 328.68 ;
+      RECT 920.37 328.88 920.635 329.11 ;
+      RECT 920.37 329.31 920.635 329.54 ;
+      RECT 920.37 329.74 920.635 329.97 ;
+      RECT 920.37 330.17 920.635 330.4 ;
+      RECT 920.37 330.6 920.635 330.83 ;
+      RECT 920.37 331.03 920.635 331.26 ;
+      RECT 920.37 331.46 920.635 331.69 ;
+      RECT 920.37 331.89 920.635 332.12 ;
+      RECT 920.37 332.26 920.635 332.49 ;
+      RECT 920.37 332.63 920.635 471.565 ;
+      RECT 920.37 471.705 920.635 553.885 ;
+      RECT 920.37 559.5 920.635 567.395 ;
+      RECT 920.37 573.115 920.635 586.38 ;
+      RECT 920.635 0 920.7 109.945 ;
+      RECT 920.635 112.76 920.7 114.075 ;
+      RECT 920.635 119.995 920.7 308.2 ;
+      RECT 920.635 308.4 920.7 309.73 ;
+      RECT 920.635 314.125 920.7 315.455 ;
+      RECT 920.635 315.655 920.7 315.95 ;
+      RECT 920.635 316.15 920.7 316.485 ;
+      RECT 920.635 316.685 920.7 316.98 ;
+      RECT 920.635 317.18 920.7 317.465 ;
+      RECT 920.635 317.665 920.7 317.925 ;
+      RECT 920.635 318.125 920.7 318.42 ;
+      RECT 920.635 318.62 920.7 318.89 ;
+      RECT 920.635 319.09 920.7 319.355 ;
+      RECT 920.635 319.555 920.7 319.785 ;
+      RECT 920.635 319.925 920.7 320.2 ;
+      RECT 920.635 320.34 920.7 320.57 ;
+      RECT 920.635 320.71 920.7 320.94 ;
+      RECT 920.635 321.14 920.7 321.37 ;
+      RECT 920.635 321.57 920.7 321.8 ;
+      RECT 920.635 322 920.7 322.23 ;
+      RECT 920.635 322.43 920.7 322.66 ;
+      RECT 920.635 322.86 920.7 323.09 ;
+      RECT 920.635 323.29 920.7 323.52 ;
+      RECT 920.635 323.72 920.7 323.95 ;
+      RECT 920.635 324.15 920.7 324.38 ;
+      RECT 920.635 324.58 920.7 324.81 ;
+      RECT 920.635 325.01 920.7 325.24 ;
+      RECT 920.635 325.44 920.7 325.67 ;
+      RECT 920.635 325.87 920.7 326.1 ;
+      RECT 920.635 326.3 920.7 326.53 ;
+      RECT 920.635 326.73 920.7 326.96 ;
+      RECT 920.635 327.16 920.7 327.39 ;
+      RECT 920.635 327.59 920.7 327.82 ;
+      RECT 920.635 328.02 920.7 328.25 ;
+      RECT 920.635 328.45 920.7 328.68 ;
+      RECT 920.635 328.88 920.7 329.11 ;
+      RECT 920.635 329.31 920.7 329.54 ;
+      RECT 920.635 329.74 920.7 329.97 ;
+      RECT 920.635 330.17 920.7 330.4 ;
+      RECT 920.635 330.6 920.7 330.83 ;
+      RECT 920.635 331.03 920.7 331.26 ;
+      RECT 920.635 331.46 920.7 331.69 ;
+      RECT 920.635 331.89 920.7 332.12 ;
+      RECT 920.635 332.26 920.7 332.49 ;
+      RECT 920.635 332.63 920.7 365.87 ;
+      RECT 920.635 366.13 920.7 366.45 ;
+      RECT 920.635 366.71 920.7 471.565 ;
+      RECT 920.635 471.705 920.7 553.885 ;
+      RECT 920.635 559.5 920.7 567.395 ;
+      RECT 920.635 573.115 920.7 586.38 ;
+      RECT 920.7 0 920.84 109.945 ;
+      RECT 920.7 112.76 920.84 114.075 ;
+      RECT 920.7 119.995 920.84 308.2 ;
+      RECT 920.7 308.4 920.84 309.73 ;
+      RECT 920.7 314.125 920.84 315.455 ;
+      RECT 920.7 315.655 920.84 315.95 ;
+      RECT 920.7 316.15 920.84 316.485 ;
+      RECT 920.7 316.685 920.84 316.98 ;
+      RECT 920.7 317.18 920.84 317.465 ;
+      RECT 920.7 317.665 920.84 317.925 ;
+      RECT 920.7 318.125 920.84 318.42 ;
+      RECT 920.7 318.62 920.84 318.89 ;
+      RECT 920.7 319.09 920.84 319.355 ;
+      RECT 920.7 319.555 920.84 319.785 ;
+      RECT 920.7 319.925 920.84 320.2 ;
+      RECT 920.7 320.34 920.84 320.57 ;
+      RECT 920.7 320.71 920.84 320.94 ;
+      RECT 920.7 321.14 920.84 321.37 ;
+      RECT 920.7 321.57 920.84 321.8 ;
+      RECT 920.7 322 920.84 322.23 ;
+      RECT 920.7 322.43 920.84 322.66 ;
+      RECT 920.7 322.86 920.84 323.09 ;
+      RECT 920.7 323.29 920.84 323.52 ;
+      RECT 920.7 323.72 920.84 323.95 ;
+      RECT 920.7 324.15 920.84 324.38 ;
+      RECT 920.7 324.58 920.84 324.81 ;
+      RECT 920.7 325.01 920.84 325.24 ;
+      RECT 920.7 325.44 920.84 325.67 ;
+      RECT 920.7 325.87 920.84 326.1 ;
+      RECT 920.7 326.3 920.84 326.53 ;
+      RECT 920.7 326.73 920.84 326.96 ;
+      RECT 920.7 327.16 920.84 327.39 ;
+      RECT 920.7 327.59 920.84 327.82 ;
+      RECT 920.7 328.02 920.84 328.25 ;
+      RECT 920.7 328.45 920.84 328.68 ;
+      RECT 920.7 328.88 920.84 329.11 ;
+      RECT 920.7 329.31 920.84 329.54 ;
+      RECT 920.7 329.74 920.84 329.97 ;
+      RECT 920.7 330.17 920.84 330.4 ;
+      RECT 920.7 330.6 920.84 330.83 ;
+      RECT 920.7 331.03 920.84 331.26 ;
+      RECT 920.7 331.46 920.84 331.69 ;
+      RECT 920.7 331.89 920.84 332.12 ;
+      RECT 920.7 332.26 920.84 332.49 ;
+      RECT 920.7 332.63 920.84 365.87 ;
+      RECT 920.7 366.13 920.84 366.45 ;
+      RECT 920.7 366.71 920.84 395.95 ;
+      RECT 920.7 396.21 920.84 411.54 ;
+      RECT 920.7 411.86 920.84 471.565 ;
+      RECT 920.7 471.705 920.84 553.885 ;
+      RECT 920.7 559.5 920.84 567.395 ;
+      RECT 920.7 573.115 920.84 586.38 ;
+      RECT 920.84 0 921.26 109.945 ;
+      RECT 920.84 112.76 921.26 114.075 ;
+      RECT 920.84 119.995 921.26 308.2 ;
+      RECT 920.84 308.4 921.26 309.73 ;
+      RECT 920.84 314.125 921.26 315.455 ;
+      RECT 920.84 315.655 921.26 315.95 ;
+      RECT 920.84 316.15 921.26 316.485 ;
+      RECT 920.84 316.685 921.26 316.98 ;
+      RECT 920.84 317.18 921.26 317.465 ;
+      RECT 920.84 317.665 921.26 317.925 ;
+      RECT 920.84 318.125 921.26 318.42 ;
+      RECT 920.84 318.62 921.26 318.89 ;
+      RECT 920.84 319.09 921.26 319.355 ;
+      RECT 920.84 319.555 921.26 319.785 ;
+      RECT 920.84 319.925 921.26 320.2 ;
+      RECT 920.84 320.34 921.26 320.57 ;
+      RECT 920.84 320.71 921.26 320.94 ;
+      RECT 920.84 321.14 921.26 321.37 ;
+      RECT 920.84 321.57 921.26 321.8 ;
+      RECT 920.84 322 921.26 322.23 ;
+      RECT 920.84 322.43 921.26 322.66 ;
+      RECT 920.84 322.86 921.26 323.09 ;
+      RECT 920.84 323.29 921.26 323.52 ;
+      RECT 920.84 323.72 921.26 323.95 ;
+      RECT 920.84 324.15 921.26 324.38 ;
+      RECT 920.84 324.58 921.26 324.81 ;
+      RECT 920.84 325.01 921.26 325.24 ;
+      RECT 920.84 325.44 921.26 325.67 ;
+      RECT 920.84 325.87 921.26 326.1 ;
+      RECT 920.84 326.3 921.26 326.53 ;
+      RECT 920.84 326.73 921.26 326.96 ;
+      RECT 920.84 327.16 921.26 327.39 ;
+      RECT 920.84 327.59 921.26 327.82 ;
+      RECT 920.84 328.02 921.26 328.25 ;
+      RECT 920.84 328.45 921.26 328.68 ;
+      RECT 920.84 328.88 921.26 329.11 ;
+      RECT 920.84 329.31 921.26 329.54 ;
+      RECT 920.84 329.74 921.26 329.97 ;
+      RECT 920.84 330.17 921.26 330.4 ;
+      RECT 920.84 330.6 921.26 330.83 ;
+      RECT 920.84 331.03 921.26 331.26 ;
+      RECT 920.84 331.46 921.26 331.69 ;
+      RECT 920.84 331.89 921.26 332.12 ;
+      RECT 920.84 332.26 921.26 332.49 ;
+      RECT 920.84 332.63 921.26 365.87 ;
+      RECT 920.84 366.13 921.26 366.45 ;
+      RECT 920.84 366.71 921.26 395.95 ;
+      RECT 920.84 396.21 921.26 411.54 ;
+      RECT 920.84 411.86 921.26 471.565 ;
+      RECT 920.84 471.705 921.26 473 ;
+      RECT 920.84 473.69 921.26 553.885 ;
+      RECT 920.84 559.5 921.26 567.395 ;
+      RECT 920.84 573.115 921.26 586.38 ;
+      RECT 921.26 0 921.53 109.945 ;
+      RECT 921.26 112.76 921.53 114.075 ;
+      RECT 921.26 119.995 921.53 308.2 ;
+      RECT 921.26 308.4 921.53 309.73 ;
+      RECT 921.26 314.125 921.53 315.455 ;
+      RECT 921.26 315.655 921.53 315.95 ;
+      RECT 921.26 316.15 921.53 316.485 ;
+      RECT 921.26 316.685 921.53 316.98 ;
+      RECT 921.26 317.18 921.53 317.465 ;
+      RECT 921.26 317.665 921.53 317.925 ;
+      RECT 921.26 318.125 921.53 318.42 ;
+      RECT 921.26 318.62 921.53 318.89 ;
+      RECT 921.26 319.09 921.53 319.355 ;
+      RECT 921.26 319.555 921.53 319.785 ;
+      RECT 921.26 319.925 921.53 320.2 ;
+      RECT 921.26 320.34 921.53 320.57 ;
+      RECT 921.26 320.71 921.53 320.94 ;
+      RECT 921.26 321.14 921.53 321.37 ;
+      RECT 921.26 321.57 921.53 321.8 ;
+      RECT 921.26 322 921.53 322.23 ;
+      RECT 921.26 322.43 921.53 322.66 ;
+      RECT 921.26 322.86 921.53 323.09 ;
+      RECT 921.26 323.29 921.53 323.52 ;
+      RECT 921.26 323.72 921.53 323.95 ;
+      RECT 921.26 324.15 921.53 324.38 ;
+      RECT 921.26 324.58 921.53 324.81 ;
+      RECT 921.26 325.01 921.53 325.24 ;
+      RECT 921.26 325.44 921.53 325.67 ;
+      RECT 921.26 325.87 921.53 326.1 ;
+      RECT 921.26 326.3 921.53 326.53 ;
+      RECT 921.26 326.73 921.53 326.96 ;
+      RECT 921.26 327.16 921.53 327.39 ;
+      RECT 921.26 327.59 921.53 327.82 ;
+      RECT 921.26 328.02 921.53 328.25 ;
+      RECT 921.26 328.45 921.53 328.68 ;
+      RECT 921.26 328.88 921.53 329.11 ;
+      RECT 921.26 329.31 921.53 329.54 ;
+      RECT 921.26 329.74 921.53 329.97 ;
+      RECT 921.26 330.17 921.53 330.4 ;
+      RECT 921.26 330.6 921.53 330.83 ;
+      RECT 921.26 331.03 921.53 331.26 ;
+      RECT 921.26 331.46 921.53 331.69 ;
+      RECT 921.26 331.89 921.53 332.12 ;
+      RECT 921.26 332.26 921.53 332.49 ;
+      RECT 921.26 332.63 921.53 365.87 ;
+      RECT 921.26 366.13 921.53 366.45 ;
+      RECT 921.26 366.71 921.53 395.95 ;
+      RECT 921.26 396.21 921.53 411.54 ;
+      RECT 921.26 411.86 921.53 471.565 ;
+      RECT 921.26 471.705 921.53 472.325 ;
+      RECT 921.26 472.72 921.53 473 ;
+      RECT 921.26 473.69 921.53 553.885 ;
+      RECT 921.26 559.5 921.53 567.395 ;
+      RECT 921.26 573.115 921.53 586.38 ;
+      RECT 921.53 0 921.62 109.945 ;
+      RECT 921.53 112.76 921.62 114.075 ;
+      RECT 921.53 119.995 921.62 308.2 ;
+      RECT 921.53 308.4 921.62 309.73 ;
+      RECT 921.53 314.125 921.62 315.455 ;
+      RECT 921.53 315.655 921.62 315.95 ;
+      RECT 921.53 316.15 921.62 316.485 ;
+      RECT 921.53 316.685 921.62 316.98 ;
+      RECT 921.53 317.18 921.62 317.465 ;
+      RECT 921.53 317.665 921.62 317.925 ;
+      RECT 921.53 318.125 921.62 318.42 ;
+      RECT 921.53 318.62 921.62 318.89 ;
+      RECT 921.53 319.09 921.62 319.355 ;
+      RECT 921.53 319.555 921.62 319.785 ;
+      RECT 921.53 319.925 921.62 320.2 ;
+      RECT 921.53 320.34 921.62 320.57 ;
+      RECT 921.53 320.71 921.62 320.94 ;
+      RECT 921.53 321.14 921.62 321.37 ;
+      RECT 921.53 321.57 921.62 321.8 ;
+      RECT 921.53 322 921.62 322.23 ;
+      RECT 921.53 322.43 921.62 322.66 ;
+      RECT 921.53 322.86 921.62 323.09 ;
+      RECT 921.53 323.29 921.62 323.52 ;
+      RECT 921.53 323.72 921.62 323.95 ;
+      RECT 921.53 324.15 921.62 324.38 ;
+      RECT 921.53 324.58 921.62 324.81 ;
+      RECT 921.53 325.01 921.62 325.24 ;
+      RECT 921.53 325.44 921.62 325.67 ;
+      RECT 921.53 325.87 921.62 326.1 ;
+      RECT 921.53 326.3 921.62 326.53 ;
+      RECT 921.53 326.73 921.62 326.96 ;
+      RECT 921.53 327.16 921.62 327.39 ;
+      RECT 921.53 327.59 921.62 327.82 ;
+      RECT 921.53 328.02 921.62 328.25 ;
+      RECT 921.53 328.45 921.62 328.68 ;
+      RECT 921.53 328.88 921.62 329.11 ;
+      RECT 921.53 329.31 921.62 329.54 ;
+      RECT 921.53 329.74 921.62 329.97 ;
+      RECT 921.53 330.17 921.62 330.4 ;
+      RECT 921.53 330.6 921.62 330.83 ;
+      RECT 921.53 331.03 921.62 331.26 ;
+      RECT 921.53 331.46 921.62 331.69 ;
+      RECT 921.53 331.89 921.62 332.12 ;
+      RECT 921.53 332.26 921.62 332.49 ;
+      RECT 921.53 332.63 921.62 365.87 ;
+      RECT 921.53 366.13 921.62 366.45 ;
+      RECT 921.53 366.71 921.62 395.95 ;
+      RECT 921.53 396.21 921.62 411.54 ;
+      RECT 921.53 411.86 921.62 471.565 ;
+      RECT 921.53 471.705 921.62 472.325 ;
+      RECT 921.53 472.72 921.62 473 ;
+      RECT 921.53 473.69 921.62 516.89 ;
+      RECT 921.53 517.09 921.62 521.19 ;
+      RECT 921.53 521.39 921.62 525.425 ;
+      RECT 921.53 525.625 921.62 529.81 ;
+      RECT 921.53 530.01 921.62 534.26 ;
+      RECT 921.53 534.46 921.62 538.51 ;
+      RECT 921.53 538.71 921.62 542.5 ;
+      RECT 921.53 542.7 921.62 548.62 ;
+      RECT 921.53 548.82 921.62 553.885 ;
+      RECT 921.53 559.5 921.62 567.395 ;
+      RECT 921.53 573.115 921.62 586.38 ;
+      RECT 921.62 0 922.195 109.945 ;
+      RECT 921.62 112.76 922.195 114.075 ;
+      RECT 921.62 119.995 922.195 308.2 ;
+      RECT 921.62 308.4 922.195 309.73 ;
+      RECT 921.62 314.125 922.195 315.455 ;
+      RECT 921.62 315.655 922.195 315.95 ;
+      RECT 921.62 316.15 922.195 316.485 ;
+      RECT 921.62 316.685 922.195 316.98 ;
+      RECT 921.62 317.18 922.195 317.465 ;
+      RECT 921.62 317.665 922.195 317.925 ;
+      RECT 921.62 318.125 922.195 318.42 ;
+      RECT 921.62 318.62 922.195 318.89 ;
+      RECT 921.62 319.09 922.195 319.355 ;
+      RECT 921.62 319.555 922.195 319.785 ;
+      RECT 921.62 319.925 922.195 320.2 ;
+      RECT 921.62 320.34 922.195 320.57 ;
+      RECT 921.62 320.71 922.195 320.94 ;
+      RECT 921.62 321.14 922.195 321.37 ;
+      RECT 921.62 321.57 922.195 321.8 ;
+      RECT 921.62 322 922.195 322.23 ;
+      RECT 921.62 322.43 922.195 322.66 ;
+      RECT 921.62 322.86 922.195 323.09 ;
+      RECT 921.62 323.29 922.195 323.52 ;
+      RECT 921.62 323.72 922.195 323.95 ;
+      RECT 921.62 324.15 922.195 324.38 ;
+      RECT 921.62 324.58 922.195 324.81 ;
+      RECT 921.62 325.01 922.195 325.24 ;
+      RECT 921.62 325.44 922.195 325.67 ;
+      RECT 921.62 325.87 922.195 326.1 ;
+      RECT 921.62 326.3 922.195 326.53 ;
+      RECT 921.62 326.73 922.195 326.96 ;
+      RECT 921.62 327.16 922.195 327.39 ;
+      RECT 921.62 327.59 922.195 327.82 ;
+      RECT 921.62 328.02 922.195 328.25 ;
+      RECT 921.62 328.45 922.195 328.68 ;
+      RECT 921.62 328.88 922.195 329.11 ;
+      RECT 921.62 329.31 922.195 329.54 ;
+      RECT 921.62 329.74 922.195 329.97 ;
+      RECT 921.62 330.17 922.195 330.4 ;
+      RECT 921.62 330.6 922.195 330.83 ;
+      RECT 921.62 331.03 922.195 331.26 ;
+      RECT 921.62 331.46 922.195 331.69 ;
+      RECT 921.62 331.89 922.195 332.12 ;
+      RECT 921.62 332.26 922.195 332.49 ;
+      RECT 921.62 332.63 922.195 365.87 ;
+      RECT 921.62 366.13 922.195 366.45 ;
+      RECT 921.62 366.71 922.195 395.95 ;
+      RECT 921.62 396.21 922.195 411.54 ;
+      RECT 921.62 411.86 922.195 464.9 ;
+      RECT 921.62 465.04 922.195 471.565 ;
+      RECT 921.62 471.705 922.195 472.325 ;
+      RECT 921.62 472.72 922.195 473 ;
+      RECT 921.62 473.69 922.195 516.89 ;
+      RECT 921.62 517.09 922.195 521.19 ;
+      RECT 921.62 521.39 922.195 525.425 ;
+      RECT 921.62 525.625 922.195 529.81 ;
+      RECT 921.62 530.01 922.195 534.26 ;
+      RECT 921.62 534.46 922.195 538.51 ;
+      RECT 921.62 538.71 922.195 542.5 ;
+      RECT 921.62 542.7 922.195 548.62 ;
+      RECT 921.62 548.82 922.195 553.885 ;
+      RECT 921.62 559.5 922.195 567.395 ;
+      RECT 921.62 573.115 922.195 586.38 ;
+      RECT 922.195 0 922.275 109.945 ;
+      RECT 922.195 112.76 922.275 114.075 ;
+      RECT 922.195 119.995 922.275 308.2 ;
+      RECT 922.195 308.4 922.275 309.73 ;
+      RECT 922.195 314.125 922.275 315.455 ;
+      RECT 922.195 315.655 922.275 315.95 ;
+      RECT 922.195 316.15 922.275 316.485 ;
+      RECT 922.195 316.685 922.275 316.98 ;
+      RECT 922.195 317.18 922.275 317.465 ;
+      RECT 922.195 317.665 922.275 317.925 ;
+      RECT 922.195 318.125 922.275 318.42 ;
+      RECT 922.195 318.62 922.275 318.89 ;
+      RECT 922.195 319.09 922.275 319.355 ;
+      RECT 922.195 319.555 922.275 319.785 ;
+      RECT 922.195 319.925 922.275 320.2 ;
+      RECT 922.195 320.34 922.275 320.57 ;
+      RECT 922.195 320.71 922.275 320.94 ;
+      RECT 922.195 321.14 922.275 321.37 ;
+      RECT 922.195 321.57 922.275 321.8 ;
+      RECT 922.195 322 922.275 322.23 ;
+      RECT 922.195 322.43 922.275 322.66 ;
+      RECT 922.195 322.86 922.275 323.09 ;
+      RECT 922.195 323.29 922.275 323.52 ;
+      RECT 922.195 323.72 922.275 323.95 ;
+      RECT 922.195 324.15 922.275 324.38 ;
+      RECT 922.195 324.58 922.275 324.81 ;
+      RECT 922.195 325.01 922.275 325.24 ;
+      RECT 922.195 325.44 922.275 325.67 ;
+      RECT 922.195 325.87 922.275 326.1 ;
+      RECT 922.195 326.3 922.275 326.53 ;
+      RECT 922.195 326.73 922.275 326.96 ;
+      RECT 922.195 327.16 922.275 327.39 ;
+      RECT 922.195 327.59 922.275 327.82 ;
+      RECT 922.195 328.02 922.275 328.25 ;
+      RECT 922.195 328.45 922.275 328.68 ;
+      RECT 922.195 328.88 922.275 329.11 ;
+      RECT 922.195 329.31 922.275 329.54 ;
+      RECT 922.195 329.74 922.275 329.97 ;
+      RECT 922.195 330.17 922.275 330.4 ;
+      RECT 922.195 330.6 922.275 330.83 ;
+      RECT 922.195 331.03 922.275 331.26 ;
+      RECT 922.195 331.46 922.275 331.69 ;
+      RECT 922.195 331.89 922.275 332.12 ;
+      RECT 922.195 332.26 922.275 332.49 ;
+      RECT 922.195 332.63 922.275 365.87 ;
+      RECT 922.195 366.13 922.275 366.45 ;
+      RECT 922.195 366.71 922.275 395.95 ;
+      RECT 922.195 396.21 922.275 411.54 ;
+      RECT 922.195 411.86 922.275 464.9 ;
+      RECT 922.195 465.04 922.275 471.565 ;
+      RECT 922.195 471.705 922.275 472.325 ;
+      RECT 922.195 472.72 922.275 473 ;
+      RECT 922.195 473.69 922.275 516.89 ;
+      RECT 922.195 517.09 922.275 521.19 ;
+      RECT 922.195 521.39 922.275 525.425 ;
+      RECT 922.195 525.625 922.275 529.81 ;
+      RECT 922.195 530.01 922.275 534.26 ;
+      RECT 922.195 534.46 922.275 538.51 ;
+      RECT 922.195 538.71 922.275 542.5 ;
+      RECT 922.195 542.7 922.275 548.62 ;
+      RECT 922.195 548.82 922.275 553.885 ;
+      RECT 922.195 559.5 922.275 586.38 ;
+    LAYER met3 ;
+      RECT 0 0 922.275 586.38 ;
+  END
+END CF_ADC_DSM20_core
+
+END LIBRARY
