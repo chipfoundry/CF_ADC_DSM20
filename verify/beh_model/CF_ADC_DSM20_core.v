@@ -13,6 +13,7 @@
 //   * SCANOUTPUT follows SCANINPUT when SCANMODE and SCANEN are high.
 // Trim, capacitor, chop, bandwidth, and 12-to-20-bit decimation are not modeled.
 // vpwr, vgnd, vpb, vnb, vpwrd, and vgndd are supply inputs and are not generated.
+// vgndd_vnb, vpwr_int, and vpwrd_int are analog rails and are not generated.
 
 module CF_ADC_DSM20_core (
     VREF,
@@ -115,7 +116,10 @@ module CF_ADC_DSM20_core (
     EN_DEM,
     test,
     TESTMODE,
-    VCM
+    VCM,
+    vgndd_vnb,
+    vpwr_int,
+    vpwrd_int
 );
     input VREF;
     input EN_ADWA;
@@ -218,6 +222,9 @@ module CF_ADC_DSM20_core (
     inout [7:0] test;
     input TESTMODE;
     input VCM;
+    inout vgndd_vnb;
+    inout vpwr_int;
+    inout vpwrd_int;
 
     reg refout_r;
     reg sumn_r;

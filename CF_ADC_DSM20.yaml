@@ -7,16 +7,16 @@ info:
   license: proprietary
   author: ChipFoundry
   email: support@chipfoundry.io
-  version: 0.2.0
-  date: 9-28-2026
+  version: 0.2.1
+  date: 9-29-2026
   category: analog
   tags:
   - CF_ADC_DSM20
   bus: n/a
   type: hard
   maturity: Production
-  width: '952.275'
-  height: '616.38'
+  width: '962.27'
+  height: '621.385'
   technology: sky130
   digital_supply_voltage: n/a
   analog_supply_voltage: n/a

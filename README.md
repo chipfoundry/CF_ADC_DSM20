@@ -12,7 +12,7 @@ This package ships an SRAM-style PG wrap `CF_ADC_DSM20` around analog leaf
 
 `CF_ADC_DSM20` is a SkyWater 130 nm hard-macro delta-sigma modulator ADC. Instantiate `CF_ADC_DSM20`.
 
-Macro size is 952.275 × 616.38 µm (15 µm halo around analog leaf 922.275 × 586.38 µm).
+Macro size is 962.27 × 621.385 µm (15 µm halo around analog leaf 932.27 × 591.385 µm).
 Customer PG for chip PDN is `vpwr` / `vgnd`. Analog supplies stay wrap ports and
 are routed as signals.
 
@@ -20,7 +20,7 @@ are routed as signals.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_DSM20 --version 0.2.0
+ipm install CF_ADC_DSM20 --version 0.2.1
 ```
 
 Use `hdl/gl/CF_ADC_DSM20.v` as the customer blackbox, `layout/lef/CF_ADC_DSM20.lef`
@@ -36,9 +36,9 @@ Functional sim compiles `verify/beh_model/CF_ADC_DSM20_core.v` **instead of** th
 - Differential inputs `INP` and `INN`, clock `clk`
 - References `VREF`, `VREFQ`, and `VCM`
 - Data bus `dout[7:0]`
-- Analog supplies `vpwr_cp`, `vpwr_cp_dc`, `vpwr_ext`, `VGND_DAC`, `vgnde`, and `vgnde_vnb`
+- Analog supplies `vpwr_cp`, `vpwr_cp_dc`, `vpwr_ext`, `vpwr_int`, `vpwrd_int`, `VGND_DAC`, `vgnde`, `vgnde_vnb`, and `vgndd_vnb`
 - Ideal Verilog behavioral model under `verify/beh_model/` for functional sim
-- Customer cell `CF_ADC_DSM20` 952.275 × 616.38 µm (15 µm halo around analog leaf 922.275 × 586.38 µm)
+- Customer cell `CF_ADC_DSM20` 962.27 × 621.385 µm (15 µm halo around analog leaf 932.27 × 591.385 µm)
 - Chip PDN is `vpwr` / `vgnd`
 
 ## Pinout
@@ -154,6 +154,9 @@ Directions and widths are taken from the shipped Verilog in `hdl/gl/CF_ADC_DSM20
 | `test` | inout | 8 | Test bus. Not driven by the ideal model. |
 | `TESTMODE` | input | 1 | Test mode. Not modeled. |
 | `VCM` | input | 1 | Common-mode reference. Route as a signal; not on chip PDN. |
+| `vgndd_vnb` | inout | 1 | Analog ground well. Route as a signal; not on chip PDN. |
+| `vpwr_int` | inout | 1 | Internal analog supply. Route as a signal; not on chip PDN. |
+| `vpwrd_int` | inout | 1 | Internal analog supply. Route as a signal; not on chip PDN. |
 
 
 `CF_ADC_DSM20_core` also has well taps `vpb` and `vnb`, and digital aliases
@@ -208,6 +211,7 @@ overload observes follow `INP` / `INN`. `SCANOUTPUT` follows `SCANINPUT` when
 
 | Version | Date | Notes |
 |---|---|---|
+| 0.2.1 | 2026-09-29 | Leaf is the PSoC3 modulator top. Customer macro 962.27 × 621.385 µm. Adds `vgndd_vnb`, `vpwr_int`, and `vpwrd_int`. |
 | 0.2.0 | 2026-09-28 | First SRAM-style PG-wrapped package. Ideal behavioral model. Core fill-exclude covers. |
 
 ## Tapeout History

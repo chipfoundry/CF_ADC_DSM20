@@ -100,7 +100,10 @@ module CF_ADC_DSM20_core (
     EN_DEM,
     test,
     TESTMODE,
-    VCM
+    VCM,
+    vgndd_vnb,
+    vpwr_int,
+    vpwrd_int
 );
     input VREF;
     input EN_ADWA;
@@ -203,4 +206,7 @@ module CF_ADC_DSM20_core (
     inout [7:0] test;
     input TESTMODE;
     input VCM;
+    inout vgndd_vnb;
+    inout vpwr_int;
+    inout vpwrd_int;
 endmodule
