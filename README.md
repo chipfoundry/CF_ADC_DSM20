@@ -20,7 +20,7 @@ are routed as signals.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_DSM20 --version 0.2.1
+ipm install CF_ADC_DSM20 --version 0.2.2
 ```
 
 Use `hdl/gl/CF_ADC_DSM20.v` as the customer blackbox, `layout/lef/CF_ADC_DSM20.lef`
@@ -62,8 +62,8 @@ Directions and widths are taken from the shipped Verilog in `hdl/gl/CF_ADC_DSM20
 | `EN_DWA` | input | 1 | Control. Not modeled. |
 | `MODINPUT` | input | 1 | Modulator input select. |
 | `sleep` | inout | 1 | High clears the ideal model. |
-| `COMBUF_INN` | input | 1 | Negative buffer input. |
-| `COMBUF_INP` | input | 1 | Positive buffer input. |
+| `COMBUF_INN` | — | — | Tied to `vgnd` inside the wrapper. Not a customer port. |
+| `COMBUF_INP` | — | — | Tied to `vgnd` inside the wrapper. Not a customer port. |
 | `PBUF_INN` | input | 1 | Negative preamp input. |
 | `PBUF_INP` | input | 1 | Positive preamp input. |
 | `buf_sel` | input | 1 | Control. Not modeled. |
@@ -211,6 +211,7 @@ overload observes follow `INP` / `INN`. `SCANOUTPUT` follows `SCANINPUT` when
 
 | Version | Date | Notes |
 |---|---|---|
+| 0.2.2 | 2026-10-02 | `COMBUF_INP` and `COMBUF_INN` are tied to `vgnd` inside the wrapper. Core obstruction matches the vendor abstract. |
 | 0.2.1 | 2026-09-29 | Leaf is the PSoC3 modulator top. Customer macro 962.27 × 621.385 µm. Adds `vgndd_vnb`, `vpwr_int`, and `vpwrd_int`. |
 | 0.2.0 | 2026-09-28 | First SRAM-style PG-wrapped package. Ideal behavioral model. Core fill-exclude covers. |
 

@@ -193,8 +193,6 @@ rect 175080 69498 192454 69526
 rect 165906 67040 192454 67068
 rect 186400 95980 192454 96008
 rect 185778 97313 192454 97341
-rect 13050 116074 13128 116152
-rect 13045 115922 13123 116000
 rect 153234 66778 192454 66818
 rect 0 7859 5978 7907
 rect 0 113447 5308 113495
@@ -241,6 +239,8 @@ rect 174090 114315 174130 114355
 rect 181098 116343 181138 116383
 rect 188544 26379 188584 26419
 rect 168822 24839 168862 24879
+rect 28091 116093 28131 116133
+rect 15189 115941 15229 115981
 << metal3 >>
 rect 1262 6486 1358 7680
 rect 172781 116315 189454 116411
@@ -3945,88 +3945,84 @@ rlabel metal2 s 186400 95980 192454 96008 4 iso
 port 242 nsew
 rlabel metal2 s 185778 97313 192454 97341 4 enable_hv
 port 243 nsew
-rlabel metal2 s 13050 116074 13128 116152 4 COMBUF_INP
-port 244 nsew
-rlabel metal2 s 13045 115922 13123 116000 4 COMBUF_INN
-port 245 nsew
 rlabel metal2 s 153234 66778 192454 66818 4 MODINPUT
-port 246 nsew
+port 244 nsew
 rlabel metal2 s 0 7859 5978 7907 4 sleep
-port 247 nsew
+port 245 nsew
 rlabel metal2 s 0 113447 5308 113495 4 buf_sel
-port 248 nsew
+port 246 nsew
 rlabel metal2 s 141096 115037 192454 116237 4 vpwrd_int
-port 249 nsew
+port 247 nsew
 rlabel metal2 s 0 8790 5211 9750 4 vpwr_int
-port 250 nsew
+port 248 nsew
 rlabel metal2 s 0 31670 78372 31730 4 iinc
-port 251 nsew
+port 249 nsew
 rlabel metal2 s 0 26157 8679 26219 4 itrim_1[9]
-port 252 nsew
+port 250 nsew
 rlabel metal2 s 0 22433 8679 22505 4 itrim_1[1]
-port 253 nsew
+port 251 nsew
 rlabel metal2 s 0 22535 8679 22607 4 itrim_1[2]
-port 254 nsew
+port 252 nsew
 rlabel metal2 s 0 22637 8679 22709 4 itrim_1[3]
-port 255 nsew
+port 253 nsew
 rlabel metal2 s 0 22739 8679 22811 4 itrim_1[4]
-port 256 nsew
+port 254 nsew
 rlabel metal2 s 0 17166 8679 17238 4 itrim_1[8]
-port 257 nsew
+port 255 nsew
 rlabel metal2 s 0 17268 8679 17340 4 itrim_1[7]
-port 258 nsew
+port 256 nsew
 rlabel metal2 s 0 17370 8679 17442 4 itrim_1[6]
-port 259 nsew
+port 257 nsew
 rlabel metal2 s 0 17472 8679 17544 4 itrim_1[5]
-port 260 nsew
+port 258 nsew
 rlabel metal2 s 0 31574 78271 31634 4 iin
-port 261 nsew
+port 259 nsew
 rlabel metal2 s 0 32919 79172 32979 4 itrim_sum[0]
-port 262 nsew
+port 260 nsew
 rlabel metal2 s 0 32823 79155 32883 4 itrim_sum[1]
-port 263 nsew
+port 261 nsew
 rlabel metal2 s 0 32727 78983 32787 4 itrim_sum[2]
-port 264 nsew
+port 262 nsew
 rlabel metal2 s 0 32631 78932 32691 4 itrim_sum[3]
-port 265 nsew
+port 263 nsew
 rlabel metal2 s 0 32535 78810 32595 4 itrim_sum[4]
-port 266 nsew
+port 264 nsew
 rlabel metal2 s 0 32343 78589 32403 4 itrim_2_3[0]
-port 267 nsew
+port 265 nsew
 rlabel metal2 s 0 32247 78489 32307 4 itrim_2_3[1]
-port 268 nsew
+port 266 nsew
 rlabel metal2 s 0 32151 78382 32211 4 itrim_2_3[2]
-port 269 nsew
+port 267 nsew
 rlabel metal2 s 0 32055 78339 32115 4 itrim_2_3[3]
-port 270 nsew
+port 268 nsew
 rlabel metal2 s 0 31959 78170 32019 4 itrim_2_3[4]
-port 271 nsew
+port 269 nsew
 rlabel metal2 s 0 32439 78720 32499 4 itrim_sum[5]
-port 272 nsew
+port 270 nsew
 rlabel metal2 s 0 31863 78073 31923 4 itrim_2_3[5]
-port 273 nsew
+port 271 nsew
 rlabel metal2 s 0 31478 78088 31538 4 itrim_1[0]
-port 274 nsew
+port 272 nsew
 rlabel metal2 s 163883 67114 192454 67142 4 itrim_comp[3]
-port 275 nsew
+port 273 nsew
 rlabel metal2 s 163987 67188 192454 67228 4 itrim_comp[2]
-port 276 nsew
+port 274 nsew
 rlabel metal2 s 164090 67274 192454 67314 4 itrim_comp[1]
-port 277 nsew
+port 275 nsew
 rlabel metal2 s 164211 67360 192454 67400 4 itrim_comp[0]
-port 278 nsew
+port 276 nsew
 rlabel metal2 s 148974 67446 192454 67486 4 BUF_CHOP_EN
-port 279 nsew
+port 277 nsew
 rlabel metal2 s 152632 67532 192454 67572 4 BUF_FCHOP[2]
-port 280 nsew
+port 278 nsew
 rlabel metal2 s 148887 67618 192454 67658 4 BUF_FCHOP[1]
-port 281 nsew
+port 279 nsew
 rlabel metal2 s 152539 67704 192454 67744 4 BUF_FCHOP[0]
-port 282 nsew
+port 280 nsew
 rlabel metal2 s 152461 67790 192454 67830 4 RESET_DEC_INPUT
-port 283 nsew
+port 281 nsew
 rlabel metal2 s 152278 67876 192454 67916 4 FCHOP[2]
-port 284 nsew
+port 282 nsew
 << properties >>
 string FIXED_BBOX 0 0 192454 124277
 << end >>
