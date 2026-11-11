@@ -20,7 +20,7 @@ are routed as signals.
 
 ```bash
 pip install cf-ipm
-ipm install CF_ADC_DSM20 --version 0.2.3
+ipm install CF_ADC_DSM20 --version 0.2.4
 ```
 
 Use `hdl/gl/CF_ADC_DSM20.v` as the customer blackbox, `layout/lef/CF_ADC_DSM20.lef`
@@ -213,6 +213,7 @@ overload observes follow `INP` / `INN`. `SCANOUTPUT` follows `SCANINPUT` when
 |---|---|---|
 | 0.2.2 | 2026-10-02 | `COMBUF_INP` and `COMBUF_INN` are tied to `vgnd` inside the wrapper. Core obstruction matches the vendor abstract. |
 | 0.2.3 | 2026-11-07 | Leaf GDS carries wafflefill so pre-merge density passes. WaffleDrop still keeps chip fill out of the block. |
+| 0.2.4 | 2026-11-11 | Signal LEF ports stay on the outer 6.9 µm; the inner halo is sealed so parent routes cannot cross pin stems. |
 | 0.2.1 | 2026-09-29 | Leaf is the PSoC3 modulator top. Customer macro 962.27 × 621.385 µm. Adds `vgndd_vnb`, `vpwr_int`, and `vpwrd_int`. |
 | 0.2.0 | 2026-09-28 | First SRAM-style PG-wrapped package. Ideal behavioral model. Core fill-exclude covers. |
 
